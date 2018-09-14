@@ -133,26 +133,55 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;FUCKWXY_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\\Lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="colors.h" />
+    <ClInclude Include="D3D11Renderer.h" />
+    <ClInclude Include="D3D11StateSaver.h" />
+    <ClInclude Include="Draw.h" />
+    <ClInclude Include="DXStateSaver.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1ColorRGBA.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1DWriteRenderTarget.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1Factory.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1FontWrapper.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphAtlas.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphProvider.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphRenderStates.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphSheet.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphVertexDrawer.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1Object.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1StateSaver.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1TextGeometry.h" />
+    <ClInclude Include="FW1FontWrapper\CFW1TextRenderer.h" />
+    <ClInclude Include="FW1FontWrapper\FW1CompileSettings.h" />
+    <ClInclude Include="FW1FontWrapper\FW1FontWrapper.h" />
+    <ClInclude Include="FW1FontWrapper\FW1Precompiled.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="HackProcess.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="render.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="colors.cpp" />
+    <ClCompile Include="D3D11Renderer.cpp" />
+    <ClCompile Include="D3D11StateSaver.cpp" />
+    <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -167,8 +196,36 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="DXStateSaver.cpp" />
     <ClCompile Include="FuckWXY.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1ColorRGBA.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1ColorRGBAInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1DWriteRenderTarget.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1DWriteRenderTargetInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1Factory.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1FactoryInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1FontWrapper.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1FontWrapperInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphAtlas.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphAtlasInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphProvider.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphProviderInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphRenderStates.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphRenderStatesInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphSheet.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphSheetInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphVertexDrawer.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphVertexDrawerInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1StateSaver.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1TextGeometry.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1TextGeometryInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1TextRenderer.cpp" />
+    <ClCompile Include="FW1FontWrapper\CFW1TextRendererInterface.cpp" />
+    <ClCompile Include="FW1FontWrapper\FW1FontWrapper.cpp" />
+    <ClCompile Include="FW1FontWrapper\FW1Precompiled.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="render.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -248,6 +248,7 @@ void InternalInit(void*)
 	Log.Start();
 	Log.printf("ths %p\n", g_ths);
 	InitGameBase();
+	//InitializeHook();
 	TestFun();
 	
 }

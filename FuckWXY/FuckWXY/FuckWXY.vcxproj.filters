@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\FW1FontWrapper">
+      <UniqueIdentifier>{8fee06e9-be2d-48f0-9c9d-44cb55ed1e72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\FW1FontWrapper">
+      <UniqueIdentifier>{4794271e-2027-47c4-87f4-5a1684002ac1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -36,6 +42,72 @@
     <ClInclude Include="HackProcess.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1ColorRGBA.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1DWriteRenderTarget.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1Factory.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1FontWrapper.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphAtlas.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphProvider.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphRenderStates.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphSheet.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1GlyphVertexDrawer.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1Object.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1StateSaver.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1TextGeometry.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\CFW1TextRenderer.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="colors.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11Renderer.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11StateSaver.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="DXStateSaver.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\FW1CompileSettings.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\FW1FontWrapper.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="FW1FontWrapper\FW1Precompiled.h">
+      <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -49,6 +121,102 @@
     </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="colors.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D11Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D11StateSaver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DXStateSaver.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="render.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\FW1FontWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\FW1Precompiled.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1ColorRGBA.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1ColorRGBAInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1DWriteRenderTarget.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1DWriteRenderTargetInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1Factory.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1FactoryInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1FontWrapper.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1FontWrapperInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphAtlas.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphAtlasInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphProvider.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphProviderInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphRenderStates.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphRenderStatesInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphSheet.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphSheetInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphVertexDrawer.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1GlyphVertexDrawerInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1StateSaver.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1TextGeometry.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1TextGeometryInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1TextRenderer.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="FW1FontWrapper\CFW1TextRendererInterface.cpp">
+      <Filter>源文件\FW1FontWrapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
