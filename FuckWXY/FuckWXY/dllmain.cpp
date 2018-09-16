@@ -2,6 +2,7 @@
 #include "stdafx.h"
 #include "global.h"
 #include "global.h"
+#include "Menu.h"
 DWORD64  g_dwJmp;
 DWORD64 g_len;
 bool g_isHaveBuf = false;
@@ -14,6 +15,7 @@ HWND g_MyForm;
 bool g_isSend = false;
 CHackProcess HackProcess;
 CLog Log;
+HWND GameHwnd;
 DWORD WINAPI ShowProtobufThread(LPVOID lp)
 {
 	while (1)
@@ -235,7 +237,7 @@ void TestFun()
 	while (1)
 	{
 		Sleep(1000);
-		RenderGameHack();
+	
 	}
 }
 void InternalInit(void*)
@@ -247,9 +249,11 @@ void InternalInit(void*)
 	Log.SetLogName(LogPath);
 	Log.Start();
 	Log.printf("ths %p\n", g_ths);
+	GameHwnd = FindWindow(NULL, "WuXiaX  ");
 	InitGameBase();
-	//InitializeHook();
-	TestFun();
+	InitializeHook();
+	GetGameWindowRect();
+	//TestFun();
 	
 }
 

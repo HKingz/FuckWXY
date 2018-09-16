@@ -172,6 +172,7 @@
     <ClInclude Include="global.h" />
     <ClInclude Include="HackProcess.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="render.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -225,6 +226,7 @@
     <ClCompile Include="FW1FontWrapper\FW1FontWrapper.cpp" />
     <ClCompile Include="FW1FontWrapper\FW1Precompiled.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="render.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>

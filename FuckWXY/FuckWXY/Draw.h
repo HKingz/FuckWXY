@@ -26,6 +26,7 @@ void DrawDistance(float Distance, int X, int Y);
 void DrawTimedLine(int X, int Y, int XX, int YY, D3DCOLOR Color, DWORD time, float Width = 1.0f, float Alpha = 1.0f);
 void DrawTimedHalfRectangle(float X, float Y, float W, float H, D3DCOLOR Color, DWORD time, float Width = 2.0f, float Alpha = 1.0f);
 void AddTimedText(WCHAR*text, DWORD time,DWORD color);
+int Distance(Vector3 *me, Vector3 *enemy);
 class MyChack
 {
 public:
@@ -74,7 +75,7 @@ public:
 	MyLootESPButton()
 	{
 		
-		LootESPRange = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("range"), 100, inipath);
+		//LootESPRange = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("range"), 100, inipath);
 	}
 };
 
@@ -90,7 +91,7 @@ public:
 	MyHealthStyleBtn()
 	{
 
-		MyButtonSelect = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("healthstyle"),1, inipath);
+		//MyButtonSelect = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("healthstyle"),1, inipath);
 	}
 };
 class MyAimStyleBtn
@@ -105,7 +106,7 @@ public:
 	MyAimStyleBtn()
 	{
 
-		MyButtonSelect = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("aimstyle"), 1, inipath);
+		//MyButtonSelect = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("aimstyle"), 1, inipath);
 	}
 };
 
@@ -121,7 +122,7 @@ public:
 	MyAimStyleSelect()
 	{
 
-		MyButtonSelect = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("aimstyleselect"), 1, inipath);
+		//MyButtonSelect = GetPrivateProfileInt(VMPDSA("ESP"), VMPDSA("aimstyleselect"), 1, inipath);
 	}
 };
 class MyHackWeaponStyleSelect

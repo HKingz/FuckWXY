@@ -2,11 +2,53 @@
 //
 #pragma once
 #include "global.h"
+#include "Draw.h"
+#include "D3D11Renderer.h"
+#include "string.h"
+
 GameOffsets	_GameOffsets;
 void InitGameBase()
 {
 	_GameOffsets.BaseAddress = (DWORD64)GetModuleHandle("WuXiaXClient-Win64-Shipping.exe");
 	Log.printf(VMPDSA("GameBase %I64x\n"), _GameOffsets.BaseAddress);
+}
+
+
+
+void ShowPeople(float x, float y, int dc)
+{
+	char tmp[255] = { "0" };
+	sprintf(tmp, "æ‡¿Î:%d", dc);
+	WCHAR dctext[500] = { 0 };
+	long    lLen = MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), dctext, sizeof(dctext));
+	dctext[lLen] = '\0';
+	DrawRenderText(x, y - 20, dctext, COLORWHITE, 14.0);
+	DrawRenderText(x, y, L"»À", COLORWHITE, 14.0);
+}
+
+
+void Showhorse(float x, float y, int dc)
+{
+	char tmp[255] = { "0" };
+	sprintf(tmp, "æ‡¿Î:%d", dc);
+	WCHAR dctext[500] = { 0 };
+	long    lLen = MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), dctext, sizeof(dctext));
+	dctext[lLen] = '\0';
+	DrawRenderText(x, y - 20, dctext, COLORWHITE, 14.0);
+	DrawRenderText(x, y, L"¬Ì", COLORGREEN, 14.0);
+}
+void Showitem(float x, float y, int dc,char *itemname)
+{
+	char tmp[255] = { "0" };
+	sprintf(tmp, "æ‡¿Î:%d", dc);
+	WCHAR dctext[500] = { 0 };
+	long    lLen = MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), dctext, sizeof(dctext));
+	dctext[lLen] = '\0';
+	WCHAR wItemName[500] = { 0 };
+	lLen = MultiByteToWideChar(CP_ACP, 0, itemname, strlen(itemname), wItemName, sizeof(wItemName));
+	wItemName[lLen] = '\0';
+	DrawRenderText(x, y - 20, dctext, COLORWHITE, 14.0);
+	DrawRenderText(x, y, wItemName, COLORBLUE, 14.0);
 }
 
 void RenderGameHack()
@@ -15,8 +57,7 @@ void RenderGameHack()
 	_GameOffsets.GetControlRotation(&Rotation);
 	Vector3 myroot;
 	_GameOffsets.GetControlLocation(&myroot);
-	Log.printf("%f %f %f\n", Rotation.Pitch, Rotation.Roll, Rotation.Yaw);
-	Log.printf("%f %f %f\n", myroot.X, myroot.Y, myroot.Z);
+
 	DWORD dwCount = _GameOffsets.GetEntityCount();
 	DWORD64 dwHeader = _GameOffsets.GetEntityList();
 	
@@ -40,22 +81,85 @@ void RenderGameHack()
 					//Log.printf("%s\n", strobjname);
 					if (!strcmp(strobjname, "BP_WuXiaX_Character_C") || !strcmp(strobjname, "BP_FakePlayer_C"))
 					{
-						Log.printf("find player\n");
+						//Log.printf("find player\n");
 						//printf("%I64X\n", CurrentActor);
 						//MessageBoxA(0, 0, 0, 0);
  						Vector3 vec;
 						_GameOffsets.GetRelativeLocation(CurrentActor, &vec);
-						Log.printf("%f %f %f\n", vec.X, vec.Y, vec.Z);
+						//Log.printf("%f %f %f\n", vec.X, vec.Y, vec.Z);
 						Vector3 root = vec;
-			
+						//Log.printf("Rotation %f %f %f\n", Rotation.Pitch, Rotation.Roll, Rotation.Yaw);
+						//Log.printf("myroot %f %f %f\n", myroot.X, myroot.Y, myroot.Z);
 						float x, y;
-						worldToScreen3(90, root,Rotation, myroot, &x, &y);
-						Log.printf("X %f Y %f\n", x, y);
+						//Rotation.Roll = 120;
+						worldToScreen3(90.0, root,Rotation, myroot, &x, &y);
+
+						int dc = Distance(&root, &myroot);
+						ShowPeople(x, y, dc);
+					//	Log.printf("X %f Y %f\n", x, y);
 						
 					}
-// 					HPSets hp;
-// 					_GameOffsets.GetActorHP(CurrentActor, &hp);
-// 					Log.printf("hp %f\n", hp.Health);
+					if (!strcmp(strobjname, "BP_WuXiaHorse_C"))
+					{
+						Vector3 vec;
+						_GameOffsets.GetRelativeLocation(CurrentActor, &vec);
+						Vector3 root = vec;
+						float x, y;
+						worldToScreen3(90.0, root, Rotation, myroot, &x, &y);
+
+						int dc = Distance(&root, &myroot);
+		
+						Showhorse(x, y, dc);
+					}
+					if (!strcmp(strobjname, "PickItem"))
+					{
+						DWORD dwItemID = _GameOffsets.GetItemId(CurrentActor);
+						std::string strItemName;
+;						if (dwItemID)
+						{
+							switch (dwItemID)
+							{
+							case 110003:
+								strItemName = "…¥≤º";
+								break;
+							case 110004:
+								strItemName = "Ω‚∂æ“©";
+								break;
+							case 110005:
+								strItemName = "Ω¥Ø“©";
+								break;
+							case 110006:
+								strItemName = "–¯√¸ÕË";
+								break;
+							case 110007:
+								strItemName = "¥Û≤πÕË";
+								break;
+							case 110008:
+								strItemName = "ª™Ÿ¢“©œ‰";
+					
+								break;
+
+							default:
+								break;
+							}
+						}
+
+Vector3 vec;
+_GameOffsets.GetRelativeLocation(CurrentActor, &vec);
+Vector3 root = vec;
+float x, y;
+worldToScreen3(90.0, root, Rotation, myroot, &x, &y);
+
+int dc = Distance(&root, &myroot);
+if (strItemName.length()!=0)
+{
+	Showitem(x, y, dc, (char*)strItemName.c_str());
+}
+
+
+
+
+					}
 				}
 			}
 		}

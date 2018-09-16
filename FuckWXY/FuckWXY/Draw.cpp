@@ -365,7 +365,7 @@ void MyChack::MyChackClick(POINT MousePoint)
 
 	}
 }
-POINT MenuPoint;
+POINT MenuPoint = POINT{ 20,  20 };
 void MyMenu::MyCreateMenu(POINT MenuPoint ,int W, int H, D3DCOLOR Color, WCHAR* Text)
 {
 	MyMenuX = MenuPoint.x;

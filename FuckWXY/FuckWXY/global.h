@@ -11,7 +11,7 @@
 #pragma comment(lib,"shlwapi.lib")
 
 extern CLog Log;
-
+extern HWND GameHwnd;
 extern CHackProcess HackProcess;
 extern float GameScreenX, GameScreenY;
 void InitGameBase();
@@ -33,6 +33,7 @@ DWORD InitializeHook();
 #define DEF_RelativeLocation 0x190
 #define DEF_AcknowledgedPawn 0x348
 #define DEF_RootComponent 0x290
+#define DEF_DropItemID 0x33c
 #pragma pack(push, 1)
 
 struct  uItem
@@ -328,7 +329,14 @@ public:
 		return rt;
 	}
 
+	DWORD GetItemId(DWORD64 AActor)
+	{
+		DWORD rt = 0;
 
+		if (!HackProcess.Read(AActor + DEF_DropItemID, &rt, sizeof(rt))) return 0;
+
+		return rt;
+	}
 
 };
 

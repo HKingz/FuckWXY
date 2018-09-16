@@ -93,9 +93,6 @@
     <ClInclude Include="D3D11StateSaver.h">
       <Filter>头文件\FW1FontWrapper</Filter>
     </ClInclude>
-    <ClInclude Include="Draw.h">
-      <Filter>头文件\FW1FontWrapper</Filter>
-    </ClInclude>
     <ClInclude Include="DXStateSaver.h">
       <Filter>头文件\FW1FontWrapper</Filter>
     </ClInclude>
@@ -107,6 +104,12 @@
     </ClInclude>
     <ClInclude Include="FW1FontWrapper\FW1Precompiled.h">
       <Filter>头文件\FW1FontWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="FW1FontWrapper\CFW1TextRendererInterface.cpp">
       <Filter>源文件\FW1FontWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

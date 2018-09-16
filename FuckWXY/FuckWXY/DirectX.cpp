@@ -4,9 +4,10 @@
 #include "render.h"
 #include "D3D11Renderer.h"
 #include "Draw.h"
+#include "Menu.h"
 #define M_PI 3.14159265358979323846
 float GameScreenX, GameScreenY;
-
+extern POINT MenuPoint;
 #pragma comment(lib, "d3d11.lib")
 typedef void(__stdcall *D3D11ClearRenderTargetViewHook) (ID3D11DeviceContext* pContext, ID3D11RenderTargetView *pRenderTargetView, const FLOAT ColorRGBA[4]);
 D3D11ClearRenderTargetViewHook phookD3D11ClearRenderTargetView = NULL; LRESULT CALLBACK DXGIMsgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) { return DefWindowProc(hwnd, uMsg, wParam, lParam); }
@@ -127,10 +128,17 @@ void SetGameScreen()
 	{
 		GameScreenX = pMyD3D11Reader->GetWidth();
 		GameScreenY = pMyD3D11Reader->GetHeight();
-		Log.printf("X %02f Y %02f\n", GameScreenX, GameScreenY);
+		Log.printf("GameScreenX %02f GameScreenY %02f\n", GameScreenX, GameScreenY);
 	}
 }
 
+int Distance(Vector3 *me, Vector3 *enemy)
+{
+	float A = (me->X - enemy->X);
+	float B = (me->Y - enemy->Y);
+	float C = (me->Z - enemy->Z);
+	return (int)(sqrtf(A*A + B*B)) / 100;
+}
 
 void DxDraw()
 {
@@ -167,11 +175,15 @@ void DxDraw()
 
 		g_pContext->OMSetRenderTargets(1, &RenderTargetView, NULL);
 		//Log.printf("%d\n", GetCurrentThreadId());
-		if (GameScreenX <= 1.0) SetGameScreen();
-
+		if (GameScreenX <= 1.0)
+		{
+			SetGameScreen();
+		}
+		
 
 		Dxrender->Begin();
-
+		MenuCreate(MenuPoint);
+		RenderGameHack();
 		//DrawRenderText(0, 0, (L"ÒÑ¹ýÆÚ"), COLORWHITE, 100.0);
 
 		Dxrender->End();
